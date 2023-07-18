@@ -27,6 +27,8 @@ export interface BookSchema {
 
 export interface IQuery {
     index(): string | Promise<string>;
+    securedResource(): string | Promise<string>;
+    logIn(email: string, password: string): string | Promise<string>;
     indexBook(): string | Promise<string>;
     books(): BookSchema[] | Promise<BookSchema[]>;
     getBookById(bookId: number): BookSchema | Promise<BookSchema>;

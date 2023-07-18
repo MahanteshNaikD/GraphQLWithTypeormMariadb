@@ -10,6 +10,8 @@ type BookSchema {
 
 type Query {
   index: String!
+  securedResource: String!
+  logIn(email: String!, password: String!): String!
   indexBook: String!
   books: [BookSchema!]!
   getBookById(bookId: Int!): BookSchema!

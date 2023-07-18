@@ -9,7 +9,7 @@ import { UpdateBookArgs } from './Args/UpdateBook.args';
 export class BookService {
   constructor(
     @InjectRepository(BookEntity)
-    private bookEntity: Repository<BookEntity>,
+    private bookEntity: Repository<BookEntity>
   ) {}
 
   async findAllBooks(): Promise<BookEntity[]> {
@@ -21,9 +21,9 @@ export class BookService {
     const books = await this.bookEntity.findOne({
       where: [
         {
-          id: id,
-        },
-      ],
+          id: id
+        }
+      ]
     });
     return books;
   }
@@ -45,14 +45,14 @@ export class BookService {
 
   async updateBook(
     id: number,
-    updateBookArgs: UpdateBookArgs,
+    updateBookArgs: UpdateBookArgs
   ): Promise<string> {
     const book = await this.bookEntity.findOne({
       where: [
         {
-          id: updateBookArgs.id,
-        },
-      ],
+          id: updateBookArgs.id
+        }
+      ]
     });
     book.price = updateBookArgs.price;
     book.title = updateBookArgs.title;
