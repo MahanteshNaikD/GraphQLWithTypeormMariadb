@@ -1,0 +1,33 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type BookSchema {
+  id: Int!
+  title: String!
+  price: Int!
+}
+
+type Query {
+  index: String!
+  indexBook: String!
+  books: [BookSchema!]!
+  getBookById(bookId: Int!): BookSchema!
+}
+
+type Mutation {
+  deleteBook(bookId: Int!): String!
+  addBook(addBook: AddBookArgs!): String!
+  updateBook(updateBook: UpdateBookArgs!): String!
+}
+
+input AddBookArgs {
+  title: String!
+  price: Int!
+}
+
+input UpdateBookArgs {
+  id: Int!
+  title: String!
+  price: Int!
+}
